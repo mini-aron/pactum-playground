@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "es2023",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "esnext",
+    "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
+    "types": ["vite/client"],
+    "skipLibCheck": true,
+    "paths": {
+      "@pactum/pactum_core": [
+        "../../project/Pactum/packages/pactum_core"
+      ],
+      "@pactum/pactum_react": [
+        "../../project/Pactum/packages/pactum_react"
+      ],
+      "pdf-lib": [
+        "../../project/Pactum/node_modules/.pnpm/pdf-lib@1.17.1/node_modules/pdf-lib"
+      ]
+    },
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"]
+}
