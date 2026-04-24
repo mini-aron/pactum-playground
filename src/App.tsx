@@ -8,13 +8,13 @@ import {
   type ContractFieldType,
   type ContractFieldValue,
   type SignatureInputMode,
-} from '@pactum/pactum_core'
+} from '@pactum-labs/core'
 import {
   ContractViewer,
   configurePdfWorker,
   type ContractViewerHandle,
   type ContractMode,
-} from '@pactum/pactum_react'
+} from '@pactum-labs/react'
 import { PDFDocument } from 'pdf-lib'
 import {
   useEffect,
@@ -670,6 +670,7 @@ function PlaygroundPage({
                   onDocumentChange={onDocumentChange}
                   viewportHeight="calc(100vh - 230px)"
                   pageWidth={760}
+                  showPageNavigation
                   pdfWorkerSrc="/pdf.worker.min.mjs"
                 />
               </div>
@@ -1070,6 +1071,10 @@ function normalizeFieldValue(value: unknown): ContractFieldValue {
   if (isRecord(value) && value.type === 'signature') {
     return {
       type: 'signature',
+      source:
+        value.source === 'draw' || value.source === 'stamp'
+          ? value.source
+          : undefined,
       image: readUint8Array(value.image, 'signature.image'),
       mimeType: typeof value.mimeType === 'string' ? value.mimeType : undefined,
       width: typeof value.width === 'number' ? value.width : undefined,

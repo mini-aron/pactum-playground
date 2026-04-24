@@ -9,14 +9,14 @@
     "types": ["vite/client"],
     "skipLibCheck": true,
     "paths": {
-      "@pactum/pactum_core": [
-        "../../project/Pactum/packages/pactum_core"
+      "@pactum-labs/core": [
+        "C:/Projects/Pactum/packages/pactum_core/src/index.ts"
       ],
-      "@pactum/pactum_react": [
-        "../../project/Pactum/packages/pactum_react"
+      "@pactum-labs/react": [
+        "C:/Projects/Pactum/packages/pactum_react/src/index.ts"
       ],
       "pdf-lib": [
-        "../../project/Pactum/node_modules/.pnpm/pdf-lib@1.17.1/node_modules/pdf-lib"
+        "C:/Projects/Pactum/packages/pactum_core/node_modules/pdf-lib"
       ]
     },
 

@@ -2,7 +2,7 @@ import path from 'node:path'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-const pactumRoot = path.resolve(__dirname, '..', '..', 'project', 'Pactum')
+const pactumRoot = path.resolve('C:/Projects/Pactum')
 
 export default defineConfig({
   resolve: {
@@ -14,11 +14,17 @@ export default defineConfig({
       'react/jsx-dev-runtime': path.resolve(
         'node_modules/react/jsx-dev-runtime.js',
       ),
-      '@pactum/pactum_core': path.resolve(pactumRoot, 'packages/pactum_core'),
-      '@pactum/pactum_react': path.resolve(pactumRoot, 'packages/pactum_react'),
+      '@pactum-labs/core': path.resolve(
+        pactumRoot,
+        'packages/pactum_core/src/index.ts',
+      ),
+      '@pactum-labs/react': path.resolve(
+        pactumRoot,
+        'packages/pactum_react/src/index.ts',
+      ),
       'pdf-lib': path.resolve(
         pactumRoot,
-        'node_modules/.pnpm/pdf-lib@1.17.1/node_modules/pdf-lib',
+        'packages/pactum_core/node_modules/pdf-lib',
       ),
     },
   },
